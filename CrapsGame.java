@@ -14,7 +14,7 @@ public class CrapsGame
    */
   public int processRoll(int total)
   {
-
+    Math.random(6) + Math.random(6) + 2;
     __________________________________________
     ...
 
