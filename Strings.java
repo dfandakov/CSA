@@ -28,14 +28,14 @@ return f1+" "+l;
 
 public static String negativeString(String negative){//0010111001
     
-    String n = negative.replace("0" , "2");
-    String n1 = negative.replace("2" , "0");
-
-    r
-
-
-
+     String n = negative.replace("0","2");
+     String n2 = n.replace("1","3");
+     String n3 = n2.replace("2","1");
+     String n4= n3.replace("3", "0");
+    
+    return n4;
 }
+
 
 public static String convertDate(String date){
     int d = date.indexOf("/");
@@ -57,6 +57,34 @@ public static String convertDate(String date){
    return finalDate.replace("/", "");
 
    }
+   public static String addZeros(String date){
+  
+    if(date.length() ==1 )
+    {
+      String newDate = "0" + date;
+     return newDate;
+    }
+    else return date;
+ }
+
+public static String convertDate2(String date){
+    int d = date.indexOf("/");
+    int y = date.lastIndexOf("/");
+    String year = date.substring(y);
+    String month = date.substring(0,d); 
+    String day = addZeros(date.substring(d+1,y));
+   
+    String a = addZeros(day) + "-" + addZeros(month) + "-" + year;
+    String a1 = a.replace("/", "");
+    return a1;
+}
+
+
+
+
+
+
+
 
 public static void main(String[] args){
     System.out.println(scroll("Hello World"));
@@ -75,8 +103,12 @@ public static void main(String[] args){
 
 
     System.out.println("04/20/2014 becomes " + convertDate("04/20/2014"));
-
-
+   
+   
+    System.out.println("04/20/2014 becomes " + convertDate2("04/20/2014"));
+    System.out.println("4/20/2014 becomes " + convertDate2("4/20/2014"));
+    System.out.println("04/2/2014 becomes " + convertDate2("04/2/2014"));
+    System.out.println("4/2/2014 becomes " + convertDate2("4/2/2014"));
 
 
 
